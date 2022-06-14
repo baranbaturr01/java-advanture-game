@@ -38,6 +38,11 @@ public class Player {
 
     }
 
+    public void selectLocation() {
+
+
+    }
+
     public void initPlayer(GameChar gameChar) {
         this.setDamage(gameChar.getDamage());
         this.setHealth(gameChar.getHealth());
