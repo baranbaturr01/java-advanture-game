@@ -56,12 +56,10 @@ public class Player {
     }
 
     public void printPlayerInfo() {
-        System.out.println("Character: " + this.getCharName() + ", Damage: " + this.getDamage() + ", Health: " + this.getHealth() + ", Money: " + this.getMoney());
+        System.out.println("Character: " + this.getCharName() + ", Damage: " + "Gun : " + this.getInventory().getWeapon().getName() + "\t" + "Armor : " + this.getInventory().getArmor().getName() + "\t" + "Money: " + this.getMoney());
     }
 
     public void selectLocation() {
-
-
     }
 
     public void initPlayer(GameChar gameChar) {
@@ -71,9 +69,12 @@ public class Player {
         this.setCharName(gameChar.getName());
     }
 
+    public int getTotalDamage() {
+        return this.getDamage() + this.getInventory().getWeapon().getDamage();
+    }
 
     public int getDamage() {
-        return this.damage + this.inventory.getWeapon().getDamage();
+        return this.damage;
     }
 
 
@@ -111,5 +112,12 @@ public class Player {
 
     public void setCharName(String charName) {
         this.charName = charName;
+    }
+
+    public Weapon getWeapon() {
+        if (this.inventory.getWeapon().getDamage() > 0) {
+            return this.inventory.getWeapon();
+        }
+        return null;
     }
 }

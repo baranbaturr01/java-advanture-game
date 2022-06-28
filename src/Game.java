@@ -19,17 +19,33 @@ public class Game {
             System.out.println();
             System.out.println("########## Locations ##########");
             System.out.println();
-            System.out.println("1- SafeHouse-----> This is a safe house where you can rest and recover your health");
-            System.out.println("2- ToolStore ------->You can buy gun and tools");
+            System.out.println("1- SafeHouse----->      This is a safe house where you can rest and recover your health");
+            System.out.println("2- ToolStore ------->   You can buy gun and tools");
+            System.out.println("3- Cave ------->   You can enter the Cave and fight with the monster");
+            System.out.println("4- Forest ------->   You can enter the Forest and fight with the monster");
+            System.out.println("5- River ------->   You can enter the River and fight with the monster");
+            System.out.println("0- Exit ------->        You can close the game");
+
             System.out.println("Please enter your location number: ");
 
             int selectLoc = scanner.nextInt();
             switch (selectLoc) {
+                case 0 -> {
+                    location = null;
+                    break;
+                }
                 case 1 -> location = new SafeHouse(player);
                 case 2 -> location = new ToolStore(player);
+                case 3 -> location = new Cave(player);
+                case 4 -> location = new Forest(player);
+                case 5 -> location = new River(player);
+
                 default -> {
                     location = new SafeHouse(player);
                 }
+            }
+            if (location == null) {
+                break;
             }
             if (!location.onLocation()) {
                 System.out.println("Game Over");
