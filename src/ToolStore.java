@@ -20,6 +20,7 @@ public class ToolStore extends NormalLocation {
         switch (select) {
             case 1 -> {
                 printWeapon();
+                buyWeapon();
             }
             case 2 -> {
                 printArmor();
@@ -39,5 +40,36 @@ public class ToolStore extends NormalLocation {
 
     public void printWeapon() {
         System.out.println("------------GUNS------------");
+        for (Weapon w : Weapon.weapons()) {
+            System.out.println(w.getId() + " - " + w.getName() + " <Para : " + w.getPrice() + " Hasar : " + w.getDamage() + ">");
+        }
+    }
+
+    public void buyWeapon() {
+
+        System.out.println("Please enter your gun selection: ");
+        int selectedWeaponId = Location.scanner.nextInt();
+
+        while (selectedWeaponId < 1 || selectedWeaponId > Weapon.weapons().length) {
+            System.out.println("Wrong !! Please enter your selection: ");
+            selectedWeaponId = Location.scanner.nextInt();
+        }
+        Weapon selectedWeapon = Weapon.getWeaponObjectById(selectedWeaponId);
+
+        if (selectedWeapon != null) {
+
+            if (this.getPlayer().getMoney() >= selectedWeapon.getPrice()) {
+
+                this.getPlayer().setMoney(this.getPlayer().getMoney() - selectedWeapon.getPrice());
+                System.out.println("You have bought " + selectedWeapon.getName());
+                System.out.println("Kalan Paranız: " + this.getPlayer().getMoney());
+                System.out.println("Önceki Silahınız " + this.getPlayer().getInventory().getWeapon().getName());
+                this.getPlayer().getInventory().setWeapon(selectedWeapon);
+                System.out.println("Şuan ki Silahınız " + this.getPlayer().getInventory().getWeapon().getName());
+
+            } else {
+                System.out.println("You have not enough money!!");
+            }
+        }
     }
 }

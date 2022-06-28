@@ -11,7 +11,24 @@ public class Player {
     private int money;
     private String playerName;
     private String charName;
+    private Inventory inventory;
+
+    public Inventory getInventory() {
+        return inventory;
+    }
+
+    public void setInventory(Inventory inventory) {
+        this.inventory = inventory;
+    }
+
     final Scanner scanner = new Scanner(System.in);
+
+
+    public Player(String playerName) {
+
+        this.playerName = playerName;
+        this.inventory = new Inventory();
+    }
 
     public void selectChar() {
 
@@ -34,8 +51,12 @@ public class Player {
                 selectChar();
             }
         }
-        System.out.println("Character: " + this.getCharName() + ", Damage: " + this.getDamage() + ", Health: " + this.getHealth() + ", Money: " + this.getMoney());
+//        System.out.println("Character: " + this.getCharName() + ", Damage: " + this.getDamage() + ", Health: " + this.getHealth() + ", Money: " + this.getMoney());
 
+    }
+
+    public void printPlayerInfo() {
+        System.out.println("Character: " + this.getCharName() + ", Damage: " + this.getDamage() + ", Health: " + this.getHealth() + ", Money: " + this.getMoney());
     }
 
     public void selectLocation() {
@@ -50,12 +71,9 @@ public class Player {
         this.setCharName(gameChar.getName());
     }
 
-    public Player(String playerName) {
-        this.playerName = playerName;
-    }
 
     public int getDamage() {
-        return damage;
+        return this.damage + this.inventory.getWeapon().getDamage();
     }
 
 

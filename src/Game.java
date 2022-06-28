@@ -14,6 +14,8 @@ public class Game {
         Location location = null;
 
         while (true) {
+
+            player.printPlayerInfo();
             System.out.println();
             System.out.println("########## Locations ##########");
             System.out.println();
