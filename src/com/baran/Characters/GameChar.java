@@ -1,4 +1,4 @@
-package Characters;
+package com.baran.Characters;
 
 public abstract class GameChar {
     private int id;

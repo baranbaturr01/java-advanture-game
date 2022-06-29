@@ -1,11 +1,15 @@
+package com.baran.Locations;
+import com.baran.Weapon;
+import com.baran.Armor;
+import com.baran.Player;
 public class ToolStore extends NormalLocation {
     public ToolStore(Player player) {
-        super(player, "ToolStore");
+        super(player, "com.baran.Locations.ToolStore");
     }
 
     @Override
-    boolean onLocation() {
-        System.out.println("You are in the ToolStore");
+   public boolean onLocation() {
+        System.out.println("You are in the com.baran.Locations.ToolStore");
         System.out.println("What do you want to buy?");
         boolean flag = true;
         while (flag) {
@@ -31,7 +35,7 @@ public class ToolStore extends NormalLocation {
                     break;
                 }
                 case 3 -> {
-                    System.out.println("You exit the ToolStore");
+                    System.out.println("You exit the com.baran.Locations.ToolStore");
                     flag = false;
                     break;
                 }
@@ -44,7 +48,7 @@ public class ToolStore extends NormalLocation {
     public void printArmor() {
         System.out.println("------------ARMORS------------");
         for (Armor a : Armor.armors()) {
-            System.out.println(a.getId() + " - " + a.getName() + " <Para : " + a.getPrice() + " Armor : " + a.getBlock() + ">");
+            System.out.println(a.getId() + " - " + a.getName() + " <Para : " + a.getPrice() + " com.baran.Armor : " + a.getBlock() + ">");
         }
 
     }
@@ -85,7 +89,7 @@ public class ToolStore extends NormalLocation {
     }
 
     public void buyArmor() {
-        System.out.println("Please enter your Armor selection: ");
+        System.out.println("Please enter your com.baran.Armor selection: ");
         int selectedArmorId = Location.scanner.nextInt();
 
         while (selectedArmorId < 1 || selectedArmorId > Armor.armors().length) {

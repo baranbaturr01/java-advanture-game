@@ -1,7 +1,9 @@
-import Characters.Archer;
-import Characters.GameChar;
-import Characters.Knight;
-import Characters.Samurai;
+package com.baran;
+
+import com.baran.Characters.Archer;
+import com.baran.Characters.GameChar;
+import com.baran.Characters.Knight;
+import com.baran.Characters.Samurai;
 
 import java.util.Scanner;
 
@@ -56,7 +58,7 @@ public class Player {
     }
 
     public void printPlayerInfo() {
-        System.out.println("Character: " + this.getCharName() + ", Damage: " + "Gun : " + this.getInventory().getWeapon().getName() + "\t" + "Armor : " + this.getInventory().getArmor().getName() + "\t" + "Money: " + this.getMoney());
+        System.out.println("Character: " + this.getCharName() + ", Damage: " + "Gun : " + this.getInventory().getWeapon().getName() + "\t" + "com.baran.Armor : " + this.getInventory().getArmor().getName() + "\t" + "Money: " + this.getMoney());
     }
 
     public void selectLocation() {

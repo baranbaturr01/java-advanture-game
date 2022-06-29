@@ -1,3 +1,5 @@
+package com.baran;
+
 public class Inventory {
     private Weapon weapon;
     private Armor armor;

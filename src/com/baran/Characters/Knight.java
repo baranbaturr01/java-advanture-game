@@ -1,4 +1,4 @@
-package Characters;
+package com.baran.Characters;
 
 public class Knight extends GameChar {
     public Knight() {

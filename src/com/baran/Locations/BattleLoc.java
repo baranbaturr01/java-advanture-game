@@ -1,4 +1,8 @@
-import javax.swing.text.Style;
+package com.baran.Locations;
+
+import com.baran.Monsters.Obstacle;
+import com.baran.Player;
+
 import java.util.Random;
 
 public abstract class BattleLoc extends Location {
@@ -133,7 +137,7 @@ public abstract class BattleLoc extends Location {
         System.out.println("You have " + this.getPlayer().getTotalDamage() + " Damage");
         System.out.println("You have " + this.getPlayer().getMoney() + " Money");
         System.out.println("You have " + this.getPlayer().getWeapon().getName() + " Gun");
-        System.out.println("You have " + this.getPlayer().getInventory().getArmor().getName() + " Armor");
+        System.out.println("You have " + this.getPlayer().getInventory().getArmor().getName() + " com.baran.Armor");
         System.out.println("You have " + this.getPlayer().getInventory().getArmor().getBlock() + " Blocking");
 
     }

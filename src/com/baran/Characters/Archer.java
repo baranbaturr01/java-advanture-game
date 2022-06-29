@@ -1,4 +1,4 @@
-package Characters;
+package com.baran.Characters;
 
 public class Archer extends GameChar {
     public Archer() {
