@@ -11,7 +11,7 @@ public class Game {
     Scanner scanner = new Scanner(System.in);
 
     public void start() {
-        System.out.println("com.baran.Game started,Welcome to the game");
+        System.out.println("Game started,Welcome to the game");
         System.out.println("Please enter your name");
         String playerName = scanner.nextLine();
         Player player = new Player(playerName);
@@ -24,14 +24,14 @@ public class Game {
 
             player.printPlayerInfo();
             System.out.println();
-            System.out.println("########## com.baran.Locations ##########");
+            System.out.println("########## Locations ##########");
             System.out.println();
-            System.out.println("1- com.baran.Locations.SafeHouse----->      This is a safe house where you can rest and recover your health");
-            System.out.println("2- com.baran.Locations.ToolStore ------->   You can buy gun and tools");
-            System.out.println("3- com.baran.Locations.Cave ------->   You can enter the com.baran.Locations.Cave and fight with the monster");
-            System.out.println("4- com.baran.Locations.Forest ------->   You can enter the com.baran.Locations.Forest and fight with the monster");
-            System.out.println("5- com.baran.Locations.River ------->   You can enter the com.baran.Locations.River and fight with the monster");
-            System.out.println("0- Exit ------->        You can close the game");
+            System.out.println("1- SafeHouse    ----->      This is a safe house where you can rest and recover your health");
+            System.out.println("2- ToolStore    ----->      You can buy gun and tools");
+            System.out.println("3- Cave         ----->      You can enter the CAVE and fight with the ZOMBIE");
+            System.out.println("4- Forest       ----->      You can enter the FOREST and fight with the VAMPIRES");
+            System.out.println("5- River        ----->      You can enter the RIVER and fight with the BEAR");
+            System.out.println("0- Exit         ----->      You can close the game");
 
             System.out.println("Please enter your location number: ");
 
@@ -55,7 +55,7 @@ public class Game {
                 break;
             }
             if (!location.onLocation()) {
-                System.out.println("com.baran.Game Over");
+                System.out.println("Game Over");
                 break;
             }
 

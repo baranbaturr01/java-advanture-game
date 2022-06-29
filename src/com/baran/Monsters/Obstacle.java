@@ -8,13 +8,13 @@ public class Obstacle {
     private int award;
     private int originalHealth;
 
-    public Obstacle(int id, String name, int damage, int health, int award, int originalHealth) {
+    public Obstacle(int id, String name, int damage, int health, int award) {
         this.id = id;
         this.name = name;
         this.damage = damage;
         this.health = health;
         this.award = award;
-        this.originalHealth = originalHealth;
+        this.originalHealth = health;
     }
 
     public int getOriginalHealth() {

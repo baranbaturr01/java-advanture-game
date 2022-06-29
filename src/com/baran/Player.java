@@ -10,6 +10,16 @@ import java.util.Scanner;
 public class Player {
     private int damage;
     private int health;
+
+    public int getOriginalHealth() {
+        return originalHealth;
+    }
+
+    public void setOriginalHealth(int originalHealth) {
+        this.originalHealth = originalHealth;
+    }
+
+    private int originalHealth;
     private int money;
     private String playerName;
     private String charName;
@@ -58,7 +68,7 @@ public class Player {
     }
 
     public void printPlayerInfo() {
-        System.out.println("Character: " + this.getCharName() + ", Damage: " + "Gun : " + this.getInventory().getWeapon().getName() + "\t" + "com.baran.Armor : " + this.getInventory().getArmor().getName() + "\t" + "Money: " + this.getMoney());
+        System.out.println("Character: " + this.getCharName() + " Health : " + this.getHealth() + ", Damage: " + this.getDamage() + ", Gun : " + this.getInventory().getWeapon().getName() + ", Armor : " + this.getInventory().getArmor().getName() + "," + "Money: " + this.getMoney());
     }
 
     public void selectLocation() {
@@ -67,6 +77,7 @@ public class Player {
     public void initPlayer(GameChar gameChar) {
         this.setDamage(gameChar.getDamage());
         this.setHealth(gameChar.getHealth());
+        this.setOriginalHealth(gameChar.getHealth());
         this.setMoney(gameChar.getMoney());
         this.setCharName(gameChar.getName());
     }
